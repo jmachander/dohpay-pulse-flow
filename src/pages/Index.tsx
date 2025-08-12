@@ -12,7 +12,8 @@ import heroImage from "@/assets/hero-beverage.jpg";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
-import product4 from "@/assets/product-4.jpg";
+import ProductSpecs from "@/components/site/ProductSpecs";
+import Careers from "@/components/site/Careers";
 
 const fadeIn = { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 } };
 
@@ -49,9 +50,10 @@ const Index = () => {
             <a href="#home" className="story-link">Home</a>
             <a href="#products" className="story-link">Products</a>
             <a href="#contact" className="story-link">Contact</a>
+            <a href="#careers" className="story-link">Careers</a>
           </nav>
           <div className="flex items-center gap-2">
-            <Button size="sm" className="hidden md:inline-flex">Sign In</Button>
+            <Button size="sm" asChild className="hidden md:inline-flex"><a href="#contact">Get Started</a></Button>
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMenuOpen(v => !v)}>
               <Menu />
             </Button>
@@ -63,6 +65,7 @@ const Index = () => {
               <a href="#home" className="py-2" onClick={() => setMenuOpen(false)}>Home</a>
               <a href="#products" className="py-2" onClick={() => setMenuOpen(false)}>Products</a>
               <a href="#contact" className="py-2" onClick={() => setMenuOpen(false)}>Contact</a>
+              <a href="#careers" className="py-2" onClick={() => setMenuOpen(false)}>Careers</a>
             </div>
           </div>
         )}
@@ -130,6 +133,9 @@ const Index = () => {
           </motion.div>
         </section>
 
+        {/* Product Specs */}
+        <ProductSpecs />
+
         <section id="products" className="container py-10">
           <h2 className="mb-4 text-base font-semibold">Products</h2>
           {loading ? (
@@ -171,10 +177,14 @@ const Index = () => {
           <div className="md:col-span-1 space-y-3">
             <h2 className="text-base font-semibold">Contact Us</h2>
             <p className="text-sm text-muted-foreground">Have a question or want a demo? Reach out and our team will respond promptly.</p>
-            <div className="flex gap-3 text-muted-foreground">
+            <div className="space-y-1 text-xs text-muted-foreground">
+              <p>Chandaria Business Innovation and Incubation Center, Nairobi, Kenya</p>
+              <p><a href="mailto:hello@dohpay.co.ke" className="underline-offset-2 hover:underline">hello@dohpay.co.ke</a></p>
+              <p><a href="tel:+254700000000" className="underline-offset-2 hover:underline">+254 700 000 000</a></p>
+            </div>
+            <div className="flex gap-3 text-muted-foreground pt-2">
               <a href="https://twitter.com/dohpay" aria-label="Twitter"><Twitter className="h-5 w-5" /></a>
               <a href="https://www.linkedin.com/company/dohpay" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
-              <a href="https://github.com/dohpay" aria-label="GitHub"><Github className="h-5 w-5" /></a>
               <a href="https://youtube.com/@dohpay" aria-label="YouTube"><Youtube className="h-5 w-5" /></a>
             </div>
           </div>
@@ -205,13 +215,15 @@ const Index = () => {
             </CardContent>
           </Card>
         </section>
-      </main>
+
+        {/* Careers */}
+        <Careers />
 
       <footer className="border-t">
         <div className="container grid gap-8 py-8 md:grid-cols-4">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-primary to-destructive text-primary-foreground"><Star className="h-3.5 w-3.5" /></span>
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-primary to-secondary text-primary-foreground"><Star className="h-3.5 w-3.5" /></span>
               <span className="text-sm font-semibold">DohPay Solutions</span>
             </div>
             <p className="text-xs text-muted-foreground">Revolutionizing beverage dispensing through innovative automation technology. Engineering solutions for the modern hospitality industry.</p>
