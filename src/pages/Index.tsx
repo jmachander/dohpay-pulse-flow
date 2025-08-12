@@ -13,7 +13,7 @@ import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
 import product4 from "@/assets/product-4.jpg";
-import ProductSpecs from "@/components/site/ProductSpecs";
+
 import Careers from "@/components/site/Careers";
 
 const fadeIn = { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 } };
@@ -49,6 +49,7 @@ const Index = () => {
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#home" className="story-link">Home</a>
+            <a href="/projects" className="story-link">Projects</a>
             <a href="#products" className="story-link">Products</a>
             <a href="#contact" className="story-link">Contact</a>
             <a href="#careers" className="story-link">Careers</a>
@@ -64,6 +65,7 @@ const Index = () => {
           <div className="md:hidden border-t bg-background">
             <div className="container py-2 flex flex-col text-sm">
               <a href="#home" className="py-2" onClick={() => setMenuOpen(false)}>Home</a>
+              <a href="/projects" className="py-2" onClick={() => setMenuOpen(false)}>Projects</a>
               <a href="#products" className="py-2" onClick={() => setMenuOpen(false)}>Products</a>
               <a href="#contact" className="py-2" onClick={() => setMenuOpen(false)}>Contact</a>
               <a href="#careers" className="py-2" onClick={() => setMenuOpen(false)}>Careers</a>
@@ -133,9 +135,6 @@ const Index = () => {
             </div>
           </motion.div>
         </section>
-
-        {/* Product Specs */}
-        <ProductSpecs />
 
         <section id="products" className="container py-10">
           <h2 className="mb-4 text-base font-semibold">Products</h2>
