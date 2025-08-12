@@ -12,6 +12,7 @@ import heroImage from "@/assets/hero-beverage.jpg";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
+import product4 from "@/assets/product-4.jpg";
 import ProductSpecs from "@/components/site/ProductSpecs";
 import Careers from "@/components/site/Careers";
 
@@ -218,6 +219,8 @@ const Index = () => {
 
         {/* Careers */}
         <Careers />
+
+        </main>
 
       <footer className="border-t">
         <div className="container grid gap-8 py-8 md:grid-cols-4">
