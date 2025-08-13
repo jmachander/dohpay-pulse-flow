@@ -47,14 +47,14 @@ const Index = () => {
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-primary to-destructive text-primary-foreground shadow-sm"><Star className="h-3.5 w-3.5" /></span>
             <span className="text-sm font-semibold">DohPay Solutions</span>
           </a>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#home" className="story-link">Home</a>
-            <a href="#products" className="story-link">Products</a>
+            <a href="#technical" className="story-link">Products</a>
             <a href="#contact" className="story-link">Contact</a>
             <a href="#careers" className="story-link">Careers</a>
           </nav>
           <div className="flex items-center gap-2">
-            <Button size="sm" asChild className="hidden md:inline-flex"><a href="#contact">Get Started</a></Button>
+            <a href="#contact" className="glass-button-primary px-6 py-2 text-sm hidden md:inline-flex">Get Started</a>
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMenuOpen(v => !v)}>
               <Menu />
             </Button>
@@ -64,7 +64,7 @@ const Index = () => {
           <div className="md:hidden border-t bg-background">
             <div className="container py-2 flex flex-col text-sm">
               <a href="#home" className="py-2" onClick={() => setMenuOpen(false)}>Home</a>
-              <a href="#products" className="py-2" onClick={() => setMenuOpen(false)}>Products</a>
+              <a href="#technical" className="py-2" onClick={() => setMenuOpen(false)}>Products</a>
               <a href="#contact" className="py-2" onClick={() => setMenuOpen(false)}>Contact</a>
               <a href="#careers" className="py-2" onClick={() => setMenuOpen(false)}>Careers</a>
             </div>
@@ -72,46 +72,46 @@ const Index = () => {
         )}
       </header>
 
-      <main id="home" className="pt-20">
-        <section className="container grid items-center gap-8 py-16 md:grid-cols-2">
-          <motion.div {...fadeIn} transition={{ duration: 0.4 }} className="space-y-6">
-            <Badge className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground">
+      <main id="home" className="pt-24">
+        <section className="container grid items-center gap-16 py-24 md:grid-cols-2">
+          <motion.div {...fadeIn} transition={{ duration: 0.4 }} className="space-y-8">
+            <Badge className="inline-flex items-center gap-3 bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-sm">
               <span className="inline-block h-2 w-2 rounded-full bg-success" />
               Next-Gen Beverage Technology
             </Badge>
-            <h1 className="text-3xl font-bold leading-tight md:text-4xl">
+            <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
               Automated Beer & Beverage Dispensing for High-Volume Venues
             </h1>
-            <p className="text-lg text-muted-foreground max-w-prose">
+            <p className="text-xl text-muted-foreground max-w-prose leading-relaxed">
               Bablas-Sip Station combines advanced IoT, sustainable design, and automated precision to serve perfectly, every time.
             </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <Button size="lg" asChild>
-                <a href="#products">View Products</a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="#demo" className="inline-flex items-center gap-2"><Play className="h-4 w-4" /> Watch Demo</a>
-              </Button>
+            <div className="flex flex-wrap items-center gap-6 pt-4">
+              <a href="#technical" className="glass-button-primary px-8 py-4 text-lg">
+                View Products
+              </a>
+              <a href="#demo" className="glass-button-secondary inline-flex items-center gap-3 px-8 py-4 text-lg">
+                <Play className="h-5 w-5" /> Watch Demo
+              </a>
             </div>
           </motion.div>
 
           <motion.div {...fadeIn} transition={{ duration: 0.5, delay: 0.1 }} className="relative">
-            <img src={heroImage} alt="Automated beverage dispensing system hero" loading="lazy" className="w-full rounded-xl border bg-card/40 shadow-2xl" />
-            <div className="absolute right-4 top-4 rounded-lg border bg-background/70 px-3 py-2 text-xs shadow backdrop-blur">
+            <img src={heroImage} alt="Automated beverage dispensing system hero" loading="lazy" className="w-full rounded-3xl border bg-card/40 shadow-2xl" />
+            <div className="absolute right-6 top-6 rounded-2xl border bg-background/70 px-4 py-3 text-sm shadow backdrop-blur">
               99.9% System Uptime
             </div>
           </motion.div>
         </section>
 
         {/* Feature Highlights Section */}
-        <section className="container py-20">
-          <motion.div {...fadeIn} transition={{ duration: 0.4 }} className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Built for Excellence</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <section className="container py-32">
+          <motion.div {...fadeIn} transition={{ duration: 0.4 }} className="text-center mb-20">
+            <h2 className="text-4xl font-bold mb-8 md:text-5xl">Built for Excellence</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               DohPay Solutions is centered on the Bablas-Sip Station, delivering next-generation beer and beverage dispensing technology.
             </p>
           </motion.div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-16 md:grid-cols-3">
             {[
               { 
                 icon: <Zap className="h-8 w-8 text-primary" />,
@@ -133,76 +133,76 @@ const Index = () => {
                 key={i} 
                 {...fadeIn} 
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="text-center space-y-4"
+                className="text-center space-y-8"
               >
                 <div className="flex justify-center">
-                  <div className="p-4 rounded-full bg-primary/10 border border-primary/20">
+                  <div className="p-6 rounded-3xl bg-primary/10 border border-primary/20 backdrop-blur-sm">
                     {f.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold">{f.title}</h3>
-                <p className="text-muted-foreground">{f.desc}</p>
+                <h3 className="text-2xl font-semibold">{f.title}</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
           </div>
         </section>
 
         {/* Technical Features Section */}
-        <section className="container py-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Bablas-Sip Station</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <section id="technical" className="container py-32">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold mb-8 md:text-5xl">Bablas-Sip Station</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Engineered for reliability and precision with flexible pricing options.
             </p>
           </div>
-          <div className="grid gap-8 lg:grid-cols-2">
-            <Card className="bg-card/40 backdrop-blur border-2">
-              <CardHeader className="p-6">
-                <CardTitle className="text-xl">Technical Features</CardTitle>
-                <CardDescription>Engineered for reliability and precision.</CardDescription>
+          <div className="grid gap-16 lg:grid-cols-2">
+            <Card className="bg-card/40 backdrop-blur border-2 rounded-3xl">
+              <CardHeader className="p-8">
+                <CardTitle className="text-2xl">Technical Features</CardTitle>
+                <CardDescription className="text-lg">Engineered for reliability and precision.</CardDescription>
               </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <ul className="space-y-4">
+              <CardContent className="p-8 pt-0">
+                <ul className="space-y-6">
                   {[
                     { icon: <Settings className="h-5 w-5 text-primary" />, text: "Auto-pressurization system for consistent flow" },
                     { icon: <CheckCircle className="h-5 w-5 text-primary" />, text: "Stainless steel body for durability" },
                     { icon: <Zap className="h-5 w-5 text-primary" />, text: "Precision spout dispensing – no losses" },
                     { icon: <CreditCard className="h-5 w-5 text-primary" />, text: "Integrated cashless payment system" },
                   ].map((f, i) => (
-                    <li key={i} className="flex items-start gap-3">
+                    <li key={i} className="flex items-start gap-4">
                       {f.icon}
-                      <span>{f.text}</span>
+                      <span className="text-lg">{f.text}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
             </Card>
 
-            <div className="grid gap-4">
-              <Card className="bg-card/40 backdrop-blur">
-                <CardHeader className="p-4">
-                  <CardTitle className="text-lg">1 Spout</CardTitle>
-                  <CardDescription className="text-primary font-semibold">KES 45,000 full payment</CardDescription>
+            <div className="grid gap-6">
+              <Card className="bg-card/40 backdrop-blur rounded-3xl">
+                <CardHeader className="p-6">
+                  <CardTitle className="text-xl">1 Spout</CardTitle>
+                  <CardDescription className="text-primary font-semibold text-lg">KES 45,000 full payment</CardDescription>
                 </CardHeader>
-                <CardContent className="p-4 pt-0 text-sm text-muted-foreground">
+                <CardContent className="p-6 pt-0 text-base text-muted-foreground">
                   Or KES 65,000 in 6-month installments.
                 </CardContent>
               </Card>
-              <Card className="bg-card/40 backdrop-blur">
-                <CardHeader className="p-4">
-                  <CardTitle className="text-lg">2 Spouts</CardTitle>
-                  <CardDescription className="text-primary font-semibold">KES 70,000 full payment</CardDescription>
+              <Card className="bg-card/40 backdrop-blur rounded-3xl">
+                <CardHeader className="p-6">
+                  <CardTitle className="text-xl">2 Spouts</CardTitle>
+                  <CardDescription className="text-primary font-semibold text-lg">KES 70,000 full payment</CardDescription>
                 </CardHeader>
-                <CardContent className="p-4 pt-0 text-sm text-muted-foreground">
+                <CardContent className="p-6 pt-0 text-base text-muted-foreground">
                   Or KES 90,000 in 6-month installments.
                 </CardContent>
               </Card>
-              <Card className="bg-card/40 backdrop-blur border-primary/20">
-                <CardHeader className="p-4">
-                  <CardTitle className="text-lg">Custom Multi‑Spout</CardTitle>
-                  <CardDescription className="text-primary font-semibold">Price on request</CardDescription>
+              <Card className="bg-card/40 backdrop-blur border-primary/20 rounded-3xl">
+                <CardHeader className="p-6">
+                  <CardTitle className="text-xl">Custom Multi‑Spout</CardTitle>
+                  <CardDescription className="text-primary font-semibold text-lg">Price on request</CardDescription>
                 </CardHeader>
-                <CardContent className="p-4 pt-0 text-sm text-muted-foreground">
+                <CardContent className="p-6 pt-0 text-base text-muted-foreground">
                   Tailored configurations for unique operational needs.
                 </CardContent>
               </Card>
@@ -210,126 +210,77 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="products" className="container py-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Products</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Complete solutions for modern beverage dispensing needs.
-            </p>
-          </div>
-          {loading ? (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <Card key={i} className="bg-card/40">
-                  <Skeleton className="h-32 w-full rounded-t-lg" />
-                  <CardContent className="p-4 space-y-2">
-                    <Skeleton className="h-4 w-2/3" />
-                    <Skeleton className="h-3 w-1/2" />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { img: product1, name: "Bablas-Sip Station", desc: "Modular dual-nozzle station for high-volume service.", price: "From KES 45K" },
-                { img: product2, name: "Precision Nozzle", desc: "High-accuracy dispensing attachment.", price: "Included" },
-                { img: product3, name: "Ops Analytics", desc: "Real-time dashboards and reports.", price: "Analytics" },
-                { img: product4, name: "Compact Kiosk", desc: "Portable cashless beer/beverage unit.", price: "Custom" },
-              ].map((p, i) => (
-                <motion.div
-                  key={i}
-                  {...fadeIn}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                >
-                  <Card className="overflow-hidden bg-card/40 backdrop-blur hover:bg-card/60 transition-all duration-300 hover:scale-105 border-2 hover:border-primary/20">
-                    <img src={p.img} alt={`${p.name} product image`} loading="lazy" className="h-40 w-full object-cover" />
-                    <CardContent className="p-6">
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <h3 className="font-semibold text-lg">{p.name}</h3>
-                          <Badge variant="secondary" className="text-xs">{p.price}</Badge>
-                        </div>
-                        <p className="text-sm text-muted-foreground">{p.desc}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </section>
 
-        <section id="contact" className="container grid gap-8 py-20 md:grid-cols-3">
-          <div className="md:col-span-1 space-y-4">
-            <h2 className="text-2xl font-bold">Contact Us</h2>
-            <p className="text-muted-foreground">Have a question or want a demo? Reach out and our team will respond promptly.</p>
-            <div className="space-y-1 text-xs text-muted-foreground">
+        {/* Careers */}
+        <Careers />
+
+        <section id="contact" className="container grid gap-16 py-32 md:grid-cols-3">
+          <div className="md:col-span-1 space-y-8">
+            <h2 className="text-3xl font-bold md:text-4xl">Contact Us</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Have a question or want a demo? Reach out and our team will respond promptly.</p>
+            <div className="space-y-3 text-base text-muted-foreground">
               <p>Chandaria Business Innovation and Incubation Center, Nairobi, Kenya</p>
               <p><a href="mailto:hello@dohpay.co.ke" className="underline-offset-2 hover:underline">hello@dohpay.co.ke</a></p>
               <p><a href="tel:+254700000000" className="underline-offset-2 hover:underline">+254 700 000 000</a></p>
             </div>
-            <div className="flex gap-3 text-muted-foreground pt-2">
-              <a href="https://twitter.com/dohpay" aria-label="Twitter"><Twitter className="h-5 w-5" /></a>
-              <a href="https://www.linkedin.com/company/dohpay" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
-              <a href="https://youtube.com/@dohpay" aria-label="YouTube"><Youtube className="h-5 w-5" /></a>
+            <div className="flex gap-4 text-muted-foreground pt-4">
+              <a href="https://twitter.com/dohpay" aria-label="Twitter"><Twitter className="h-6 w-6" /></a>
+              <a href="https://www.linkedin.com/company/dohpay" aria-label="LinkedIn"><Linkedin className="h-6 w-6" /></a>
+              <a href="https://youtube.com/@dohpay" aria-label="YouTube"><Youtube className="h-6 w-6" /></a>
             </div>
           </div>
-          <Card className="md:col-span-2 bg-card/40 backdrop-blur">
-            <CardHeader className="p-4">
-              <CardTitle className="text-sm">Send a message</CardTitle>
-              <CardDescription className="text-xs">We typically respond within 1–2 business days.</CardDescription>
+          <Card className="md:col-span-2 bg-card/40 backdrop-blur rounded-3xl">
+            <CardHeader className="p-8">
+              <CardTitle className="text-xl">Send a message</CardTitle>
+              <CardDescription className="text-base">We typically respond within 1–2 business days.</CardDescription>
             </CardHeader>
-            <CardContent className="p-4 pt-0">
-              <form onSubmit={onSubmit} className="grid gap-3">
-                <div className="grid gap-1">
-                  <label htmlFor="name" className="text-xs">Name</label>
-                  <Input id="name" name="name" placeholder="Your name" className="h-9 text-sm" />
+            <CardContent className="p-8 pt-0">
+              <form onSubmit={onSubmit} className="grid gap-6">
+                <div className="grid gap-2">
+                  <label htmlFor="name" className="text-sm font-medium">Name</label>
+                  <Input id="name" name="name" placeholder="Your name" className="h-12 text-base rounded-xl" />
                 </div>
-                <div className="grid gap-1">
-                  <label htmlFor="email" className="text-xs">Email*</label>
-                  <Input id="email" name="email" type="email" placeholder="you@example.com" className="h-9 text-sm" required />
+                <div className="grid gap-2">
+                  <label htmlFor="email" className="text-sm font-medium">Email*</label>
+                  <Input id="email" name="email" type="email" placeholder="you@example.com" className="h-12 text-base rounded-xl" required />
                 </div>
-                <div className="grid gap-1">
-                  <label htmlFor="message" className="text-xs">Message*</label>
-                  <Textarea id="message" name="message" placeholder="How can we help?" className="min-h-[96px] text-sm" required />
+                <div className="grid gap-2">
+                  <label htmlFor="message" className="text-sm font-medium">Message*</label>
+                  <Textarea id="message" name="message" placeholder="How can we help?" className="min-h-[120px] text-base rounded-xl" required />
                 </div>
-                <div className="flex items-center gap-3">
-                  <Button size="sm" type="submit">Submit</Button>
-                  <span className="text-xs text-muted-foreground">By submitting you agree to our terms.</span>
+                <div className="flex items-center gap-6">
+                  <button type="submit" className="glass-button-primary px-8 py-3 text-base">Submit</button>
+                  <span className="text-sm text-muted-foreground">By submitting you agree to our terms.</span>
                 </div>
               </form>
             </CardContent>
           </Card>
         </section>
 
-        {/* Careers */}
-        <Careers />
-
         </main>
 
-      <footer className="border-t mt-20">
-        <div className="container grid gap-8 py-12 md:grid-cols-4">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-primary to-secondary text-primary-foreground"><Star className="h-3.5 w-3.5" /></span>
-              <span className="text-sm font-semibold">DohPay Solutions</span>
+      <footer className="border-t mt-32">
+        <div className="container grid gap-12 py-20 md:grid-cols-4">
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-primary-foreground"><Star className="h-4 w-4" /></span>
+              <span className="text-lg font-semibold">DohPay Solutions</span>
             </div>
-            <p className="text-xs text-muted-foreground">Revolutionizing beverage dispensing through innovative automation technology. Engineering solutions for the modern hospitality industry.</p>
+            <p className="text-base text-muted-foreground leading-relaxed">Revolutionizing beverage dispensing through innovative automation technology. Engineering solutions for the modern hospitality industry.</p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2">Quick Links</h3>
-            <ul className="space-y-1 text-sm text-muted-foreground">
+            <h3 className="text-base font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-base text-muted-foreground">
               <li><a href="#home">Home</a></li>
-              <li><a href="#products">Products</a></li>
+              <li><a href="#technical">Products</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="#docs">Documentation</a></li>
               <li><a href="#support">Support</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2">Help Center</h3>
-            <ul className="space-y-1 text-sm text-muted-foreground">
+            <h3 className="text-base font-semibold mb-4">Help Center</h3>
+            <ul className="space-y-2 text-base text-muted-foreground">
               <li><a href="#install">Installation Guide</a></li>
               <li><a href="#warranty">Warranty</a></li>
               <li><a href="#tech">Technical Support</a></li>
@@ -337,11 +288,11 @@ const Index = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2">Follow Us</h3>
-            <div className="flex gap-3 text-muted-foreground">
-              <a href="https://twitter.com/dohpay" aria-label="Twitter"><Twitter className="h-5 w-5" /></a>
-              <a href="https://www.linkedin.com/company/dohpay" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
-              <a href="https://github.com/dohpay" aria-label="GitHub"><Github className="h-5 w-5" /></a>
+            <h3 className="text-base font-semibold mb-4">Follow Us</h3>
+            <div className="flex gap-4 text-muted-foreground">
+              <a href="https://twitter.com/dohpay" aria-label="Twitter"><Twitter className="h-6 w-6" /></a>
+              <a href="https://www.linkedin.com/company/dohpay" aria-label="LinkedIn"><Linkedin className="h-6 w-6" /></a>
+              <a href="https://github.com/dohpay" aria-label="GitHub"><Github className="h-6 w-6" /></a>
               <a href="https://youtube.com/@dohpay" aria-label="YouTube"><Youtube className="h-5 w-5" /></a>
             </div>
           </div>

@@ -3,15 +3,15 @@ import { Button } from "@/components/ui/button";
 
 export default function Careers() {
   return (
-    <section id="careers" className="container py-20">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">Join Our Team</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <section id="careers" className="container py-32">
+      <div className="text-center mb-20">
+        <h2 className="text-4xl font-bold mb-8 md:text-5xl">Join Our Team</h2>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           September Intern Roles – Building Traction. These roles contribute to market penetration, product development, digital presence, and data capabilities.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2">
         {[
           {
             title: "Business Development & Market Research Intern",
@@ -46,19 +46,19 @@ export default function Careers() {
             ]
           }
         ].map((role, i) => (
-          <div key={i} className="bg-card/40 backdrop-blur border rounded-lg p-6 space-y-4">
-            <h3 className="text-lg font-semibold">{role.title}</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+          <div key={i} className="bg-card/40 backdrop-blur border rounded-3xl p-8 space-y-6">
+            <h3 className="text-xl font-semibold">{role.title}</h3>
+            <ul className="space-y-3 text-base text-muted-foreground">
               {role.responsibilities.map((resp, j) => (
-                <li key={j} className="flex items-start gap-2">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <li key={j} className="flex items-start gap-3">
+                  <span className="inline-block h-2 w-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                   {resp}
                 </li>
               ))}
             </ul>
-            <Button size="sm" asChild>
-              <a href="mailto:hr@dohpay.co.ke">Apply Now</a>
-            </Button>
+            <a href="mailto:hr@dohpay.co.ke" className="glass-button-primary px-6 py-3 text-base inline-flex">
+              Apply Now
+            </a>
           </div>
         ))}
       </div>
