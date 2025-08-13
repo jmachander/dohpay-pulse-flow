@@ -1,16 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export default function Careers() {
-  const team = [
-    { role: "CEO", name: "TBD" },
-    { role: "CTO", name: "TBD" },
-    { role: "COO", name: "TBD" },
-    { role: "Project Lead", name: "TBD" },
-    { role: "Others", name: "We're growing" },
-  ];
   return (
     <section id="careers" className="container py-10">
       <h2 className="mb-3 text-base font-semibold">September Intern Roles – Building Traction</h2>
@@ -69,25 +60,6 @@ export default function Careers() {
           <a href="mailto:hr@dohpay.co.ke">Apply Now</a>
         </Button>
       </div>
-
-      <section aria-labelledby="team-heading" className="mt-8">
-        <h3 id="team-heading" className="mb-3 text-base font-semibold">Our Team</h3>
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {team.map((m, i) => (
-            <Card key={i} className="bg-card/40 backdrop-blur">
-              <CardHeader className="p-4 pb-2 flex-row items-center gap-3">
-                <Avatar className="h-8 w-8">
-                  <AvatarFallback>{m.role.split(" ").map((s) => s[0]).join("").slice(0, 2)}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <CardTitle className="text-sm">{m.role}</CardTitle>
-                  <p className="text-xs text-muted-foreground">{m.name}</p>
-                </div>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
-      </section>
     </section>
   );
 }
