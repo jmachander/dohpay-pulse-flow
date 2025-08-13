@@ -3,62 +3,64 @@ import { Button } from "@/components/ui/button";
 
 export default function Careers() {
   return (
-    <section id="careers" className="container py-10">
-      <h2 className="mb-3 text-base font-semibold">September Intern Roles – Building Traction</h2>
-      <p className="mb-4 max-w-prose text-sm text-muted-foreground">
-        These roles contribute to market penetration, product development, digital presence, and data capabilities.
-      </p>
+    <section id="careers" className="container py-20">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold mb-4">Join Our Team</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          September Intern Roles – Building Traction. These roles contribute to market penetration, product development, digital presence, and data capabilities.
+        </p>
+      </div>
 
-      <Accordion type="single" collapsible className="bg-card/40 rounded-lg border backdrop-blur">
-        <AccordionItem value="role-1">
-          <AccordionTrigger className="text-sm px-4">Business Development & Market Research Intern</AccordionTrigger>
-          <AccordionContent className="px-4 pb-4 text-sm text-muted-foreground">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Identify target segments and partnerships</li>
-              <li>Conduct competitive analysis and pricing studies</li>
-              <li>Support go-to-market experiments</li>
+      <div className="grid gap-6 md:grid-cols-2">
+        {[
+          {
+            title: "Business Development & Market Research Intern",
+            responsibilities: [
+              "Identify target segments and partnerships",
+              "Conduct competitive analysis and pricing studies", 
+              "Support go-to-market experiments"
+            ]
+          },
+          {
+            title: "Junior Automation & Product Development Intern – Mechanical/Electrical",
+            responsibilities: [
+              "Assist in prototyping mechanical and electrical subsystems",
+              "Run validation tests and document results",
+              "Contribute to reliability and safety improvements"
+            ]
+          },
+          {
+            title: "Digital Marketing & Content Creation Intern", 
+            responsibilities: [
+              "Produce social, blog, and video content",
+              "Optimize campaigns and web presence",
+              "Report on engagement metrics"
+            ]
+          },
+          {
+            title: "Full Stack Software Developer Intern",
+            responsibilities: [
+              "Contribute to web app features and integrations",
+              "Collaborate across frontend, backend, and data pipelines",
+              "Write tests and docs for reliability"
+            ]
+          }
+        ].map((role, i) => (
+          <div key={i} className="bg-card/40 backdrop-blur border rounded-lg p-6 space-y-4">
+            <h3 className="text-lg font-semibold">{role.title}</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {role.responsibilities.map((resp, j) => (
+                <li key={j} className="flex items-start gap-2">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  {resp}
+                </li>
+              ))}
             </ul>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="role-2">
-          <AccordionTrigger className="text-sm px-4">Junior Automation & Product Development Intern – Mechanical/Electrical</AccordionTrigger>
-          <AccordionContent className="px-4 pb-4 text-sm text-muted-foreground">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Assist in prototyping mechanical and electrical subsystems</li>
-              <li>Run validation tests and document results</li>
-              <li>Contribute to reliability and safety improvements</li>
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="role-3">
-          <AccordionTrigger className="text-sm px-4">Digital Marketing & Content Creation Intern</AccordionTrigger>
-          <AccordionContent className="px-4 pb-4 text-sm text-muted-foreground">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Produce social, blog, and video content</li>
-              <li>Optimize campaigns and web presence</li>
-              <li>Report on engagement metrics</li>
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="role-4">
-          <AccordionTrigger className="text-sm px-4">Full Stack Software Developer Intern</AccordionTrigger>
-          <AccordionContent className="px-4 pb-4 text-sm text-muted-foreground">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Contribute to web app features and integrations</li>
-              <li>Collaborate across frontend, backend, and data pipelines</li>
-              <li>Write tests and docs for reliability</li>
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-
-      <div className="mt-4">
-        <Button size="sm" asChild>
-          <a href="mailto:hr@dohpay.co.ke">Apply Now</a>
-        </Button>
+            <Button size="sm" asChild>
+              <a href="mailto:hr@dohpay.co.ke">Apply Now</a>
+            </Button>
+          </div>
+        ))}
       </div>
     </section>
   );
