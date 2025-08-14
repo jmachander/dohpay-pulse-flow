@@ -9,12 +9,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Play, Star, Menu, Twitter, Linkedin, Github, Youtube, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-beverage.jpg";
-import product1 from "@/assets/product-1.jpg";
-import product2 from "@/assets/product-2.jpg";
-import product3 from "@/assets/product-3.jpg";
-import product4 from "@/assets/product-4.jpg";
-
 import Careers from "@/components/site/Careers";
+import BablasSpecs from "@/components/site/BablasSpecs";
 
 const fadeIn = { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 } };
 
@@ -55,7 +51,7 @@ const Index = () => {
             <a href="#careers" className="story-link">Careers</a>
           </nav>
           <div className="flex items-center gap-2">
-            <Button size="sm" asChild className="hidden md:inline-flex"><a href="#contact">Get Started</a></Button>
+            <Button variant="glass" size="sm" asChild className="hidden md:inline-flex"><a href="#contact">Get Started</a></Button>
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMenuOpen(v => !v)}>
               <Menu />
             </Button>
@@ -75,60 +71,73 @@ const Index = () => {
       </header>
 
       <main id="home" className="pt-20">
-        <section className="container grid items-center gap-8 py-10 md:grid-cols-2">
-          <motion.div {...fadeIn} transition={{ duration: 0.4 }} className="space-y-4">
-            <Badge className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground">
-              <span className="inline-block h-2 w-2 rounded-full bg-success" />
+        <section className="min-h-screen flex items-center container grid gap-12 md:grid-cols-2">
+          <motion.div {...fadeIn} transition={{ duration: 0.4 }} className="space-y-8">
+            <Badge className="inline-flex items-center gap-3 bg-secondary text-secondary-foreground px-6 py-3 text-lg rounded-full">
+              <span className="inline-block h-3 w-3 rounded-full bg-success" />
               Next-Gen Beverage Technology
             </Badge>
-            <h1 className="bg-gradient-to-r from-primary to-destructive bg-clip-text text-transparent text-lg font-bold">
+            <h1 className="bg-gradient-to-r from-primary to-destructive bg-clip-text text-transparent text-5xl md:text-6xl font-bold leading-tight">
               Revolutionizing Beverage Dispensing
             </h1>
-            <p className="text-sm text-muted-foreground max-w-prose">
-              Bablas-Sip Station delivers automated, high-precision beverage dispensing for high-traffic social environments. Engineering innovation meets user experience.
+            <p className="text-xl text-muted-foreground max-w-prose leading-relaxed">
+              Bablas-Sip Station delivers automated, high-precision beverage dispensing for high-traffic social environments. Engineering innovation meets seamless user experience.
             </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <Button size="sm" asChild>
-                <a href="#products">View Products</a>
+            <div className="flex flex-wrap items-center gap-6">
+              <Button variant="glass" size="lg" asChild>
+                <a href="#products" className="text-lg px-8 py-4">Explore Products</a>
               </Button>
-              <Button variant="ghost" size="sm" asChild>
-                <a href="#demo" className="inline-flex items-center gap-2"><Play className="h-4 w-4" /> Watch Demo</a>
+              <Button variant="outline" size="lg" asChild>
+                <a href="#demo" className="inline-flex items-center gap-3 text-lg px-8 py-4">
+                  <Play className="h-5 w-5" /> Watch Demo
+                </a>
               </Button>
             </div>
           </motion.div>
 
           <motion.div {...fadeIn} transition={{ duration: 0.5, delay: 0.1 }} className="relative">
-            <img src={heroImage} alt="Automated beverage dispensing system hero" loading="lazy" className="w-full rounded-xl border bg-card/40 shadow" />
-            <div className="absolute right-4 top-4 rounded-lg border bg-background/70 px-3 py-2 text-xs shadow backdrop-blur">
+            <img src={heroImage} alt="Automated beverage dispensing system hero" loading="lazy" className="w-full rounded-3xl glass-card shadow-2xl" />
+            <div className="absolute right-6 top-6 glass-card px-6 py-3 text-lg font-semibold">
               99.9% System Uptime
             </div>
           </motion.div>
         </section>
 
-        <section className="container py-10">
-          <motion.div {...fadeIn} transition={{ duration: 0.4 }} className="grid gap-8 md:grid-cols-2">
-            <div className="space-y-3">
-              <h2 className="text-base font-semibold">Youth-Led Engineering Innovation</h2>
-              <p className="text-sm text-muted-foreground">Chandaria Business Innovation and Incubation Center, Nairobi, Kenya</p>
-              <p className="text-sm text-muted-foreground max-w-prose">
-                Founded by young engineers passionate about transforming the beverage industry through automation. Our mission is to enhance user experience while maximizing operational efficiency.
+        <section className="container py-20">
+          <motion.div {...fadeIn} transition={{ duration: 0.4 }} className="grid gap-16 lg:grid-cols-2">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl font-bold mb-4">Youth-Led Engineering Innovation</h2>
+                <p className="text-xl text-muted-foreground mb-2">Chandaria Business Innovation and Incubation Center, Nairobi, Kenya</p>
+              </div>
+              <p className="text-lg text-muted-foreground max-w-prose leading-relaxed">
+                Founded by young engineers passionate about transforming the beverage industry through automation. Our mission is to enhance user experience while maximizing operational efficiency through cutting-edge technology.
               </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-success" /> Advanced IoT integration for real-time monitoring</li>
-                <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-success" /> Sustainable design</li>
-                <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-success" /> Continuous innovation via customer feedback</li>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-success flex-shrink-0 mt-1" /> 
+                  <span className="text-lg">Advanced IoT integration for real-time monitoring</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-success flex-shrink-0 mt-1" /> 
+                  <span className="text-lg">Sustainable design principles</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-success flex-shrink-0 mt-1" /> 
+                  <span className="text-lg">Continuous innovation via customer feedback</span>
+                </li>
               </ul>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-6">
               {[
                 { title: "Automated Precision", desc: "Advanced sensors ensure accuracy every time, reducing waste and maximizing efficiency." },
                 { title: "High-Traffic Ready", desc: "Built for demanding social environments with rapid service and minimal maintenance." },
                 { title: "Smart Analytics", desc: "Real-time monitoring and insights optimize operations and predict maintenance." },
               ].map((f, i) => (
-                <Card key={i} className="bg-card/40 backdrop-blur">
-                  <CardHeader className="p-4">
-                    <CardTitle className="text-sm">{f.title}</CardTitle>
-                    <CardDescription className="text-xs">{f.desc}</CardDescription>
+                <Card key={i} className="glass-card p-6">
+                  <CardHeader className="pb-4">
+                    <CardTitle className="text-xl">{f.title}</CardTitle>
+                    <CardDescription className="text-lg">{f.desc}</CardDescription>
                   </CardHeader>
                 </Card>
               ))}
@@ -136,88 +145,77 @@ const Index = () => {
           </motion.div>
         </section>
 
-        <section id="products" className="container py-10">
-          <h2 className="mb-4 text-base font-semibold">Products</h2>
-          {loading ? (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <Card key={i} className="bg-card/40">
-                  <Skeleton className="h-32 w-full rounded-t-lg" />
-                  <CardContent className="p-4 space-y-2">
-                    <Skeleton className="h-4 w-2/3" />
-                    <Skeleton className="h-3 w-1/2" />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { img: product1, name: "Bablas-Sip Station", desc: "Modular dual-nozzle station.", price: "$—" },
-                { img: product2, name: "Precision Nozzle", desc: "High-accuracy dispensing.", price: "$—" },
-                { img: product3, name: "Ops Analytics", desc: "Real-time dashboards.", price: "$—" },
-                { img: product4, name: "Compact Kiosk", desc: "Cashless beverage kiosk.", price: "$—" },
-              ].map((p, i) => (
-                <Card key={i} className="overflow-hidden bg-card/40 backdrop-blur">
-                  <img src={p.img} alt={`${p.name} product image`} loading="lazy" className="h-32 w-full object-cover" />
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between text-sm font-medium">
-                      <span>{p.name}</span>
-                      <span className="text-muted-foreground">{p.price}</span>
-                    </div>
-                    <p className="mt-1 text-xs text-muted-foreground">{p.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
-        </section>
-
-        <section id="contact" className="container grid gap-8 py-10 md:grid-cols-3">
-          <div className="md:col-span-1 space-y-3">
-            <h2 className="text-base font-semibold">Contact Us</h2>
-            <p className="text-sm text-muted-foreground">Have a question or want a demo? Reach out and our team will respond promptly.</p>
-            <div className="space-y-1 text-xs text-muted-foreground">
-              <p>Chandaria Business Innovation and Incubation Center, Nairobi, Kenya</p>
-              <p><a href="mailto:hello@dohpay.co.ke" className="underline-offset-2 hover:underline">hello@dohpay.co.ke</a></p>
-              <p><a href="tel:+254700000000" className="underline-offset-2 hover:underline">+254 700 000 000</a></p>
-            </div>
-            <div className="flex gap-3 text-muted-foreground pt-2">
-              <a href="https://twitter.com/dohpay" aria-label="Twitter"><Twitter className="h-5 w-5" /></a>
-              <a href="https://www.linkedin.com/company/dohpay" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
-              <a href="https://youtube.com/@dohpay" aria-label="YouTube"><Youtube className="h-5 w-5" /></a>
-            </div>
-          </div>
-          <Card className="md:col-span-2 bg-card/40 backdrop-blur">
-            <CardHeader className="p-4">
-              <CardTitle className="text-sm">Send a message</CardTitle>
-              <CardDescription className="text-xs">We typically respond within 1–2 business days.</CardDescription>
-            </CardHeader>
-            <CardContent className="p-4 pt-0">
-              <form onSubmit={onSubmit} className="grid gap-3">
-                <div className="grid gap-1">
-                  <label htmlFor="name" className="text-xs">Name</label>
-                  <Input id="name" name="name" placeholder="Your name" className="h-9 text-sm" />
-                </div>
-                <div className="grid gap-1">
-                  <label htmlFor="email" className="text-xs">Email*</label>
-                  <Input id="email" name="email" type="email" placeholder="you@example.com" className="h-9 text-sm" required />
-                </div>
-                <div className="grid gap-1">
-                  <label htmlFor="message" className="text-xs">Message*</label>
-                  <Textarea id="message" name="message" placeholder="How can we help?" className="min-h-[96px] text-sm" required />
-                </div>
-                <div className="flex items-center gap-3">
-                  <Button size="sm" type="submit">Submit</Button>
-                  <span className="text-xs text-muted-foreground">By submitting you agree to our terms.</span>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
-        </section>
+        {/* Import and use BablasSpecs component */}
+        <BablasSpecs />
 
         {/* Careers */}
         <Careers />
+
+        <section id="contact" className="container py-20">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Ready to revolutionize your beverage service? Let's discuss how Bablas-Sip Station can transform your business.
+            </p>
+          </div>
+          
+          <div className="grid gap-12 lg:grid-cols-3">
+            <div className="lg:col-span-1 space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4">Contact Information</h3>
+                <div className="space-y-4 text-lg">
+                  <p className="text-muted-foreground">Chandaria Business Innovation and Incubation Center, Nairobi, Kenya</p>
+                  <p><a href="mailto:hello@dohpay.co.ke" className="text-primary hover:underline">hello@dohpay.co.ke</a></p>
+                  <p><a href="tel:+254700000000" className="text-primary hover:underline">+254 700 000 000</a></p>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
+                <div className="flex gap-4">
+                  <a href="https://twitter.com/dohpay" aria-label="Twitter" className="p-3 glass-card rounded-full hover:scale-110 transition-transform">
+                    <Twitter className="h-6 w-6" />
+                  </a>
+                  <a href="https://www.linkedin.com/company/dohpay" aria-label="LinkedIn" className="p-3 glass-card rounded-full hover:scale-110 transition-transform">
+                    <Linkedin className="h-6 w-6" />
+                  </a>
+                  <a href="https://youtube.com/@dohpay" aria-label="YouTube" className="p-3 glass-card rounded-full hover:scale-110 transition-transform">
+                    <Youtube className="h-6 w-6" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <Card className="lg:col-span-2 glass-card p-8">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl">Send us a message</CardTitle>
+                <CardDescription className="text-lg">We typically respond within 1–2 business days.</CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <form onSubmit={onSubmit} className="space-y-6">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-base font-medium">Name</label>
+                      <Input id="name" name="name" placeholder="Your name" className="h-12 text-base" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-base font-medium">Email *</label>
+                      <Input id="email" name="email" type="email" placeholder="you@example.com" className="h-12 text-base" required />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-base font-medium">Message *</label>
+                    <Textarea id="message" name="message" placeholder="How can we help?" className="min-h-[150px] text-base" required />
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Button variant="glass" size="lg" type="submit">Send Message</Button>
+                    <span className="text-sm text-muted-foreground">By submitting you agree to our terms of service.</span>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
         </main>
 
